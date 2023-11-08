@@ -20,7 +20,7 @@ export default function App () {
   }
 
   const enviarCookie = async () => {
-    Cookies.set("cookie_para_api", "blablabla");
+    Cookies.set("cookie_para_api", "blablabla", { secure: true, sameSite: 'none' });
     const response = await axios.post("/");
 
     setCookieResponse(response.data);
